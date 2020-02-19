@@ -9,16 +9,21 @@ export const App = (props) => {
     'amount',
     'category',
   ];
-
-  const table2 = [
-    'date',
-    'source',
-    'amount',
-    'category',
+  const data1 = [
+    {date: '1/1/1', title: 'pizza', amount: '78', category: 'food'},
+    {date: '1/3/1', title: 'burger', amount: '12', category: 'food'},
+    {date: '1/2/1', amount: '222', title: 'garage', category: 'car'},
   ];
 
+  // const table2 = [
+  //   'date',
+  //   'source',
+  //   'amount',
+  //   'category',
+  // ];
+
   return <div>
-    <Table cols={table1}/>
-    <Table cols={table2}/>
+    <Table cols={table1} data={data1}/>
+    {/*<Table cols={table2}/>*/}
   </div>;
 };

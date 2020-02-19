@@ -10,3 +10,14 @@ To create a production build:
 npm run build-prod
 ```
 
+Run json server:
+
+    yarn
+
+or
+
+    npm install
+    
+and then:
+
+    json-server db.json

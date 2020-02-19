@@ -1,13 +1,31 @@
 import React from 'react';
 
 export const Table = (props) => {
-  const {cols} = props;
+  const {cols, data} = props;
+
+  const [data2, setData2] = React.useState(() => {
+    fetch('http://127.0.0.1:3000/expenses/').
+        then(x => x.json()).
+        then(resp => setData2(resp));
+  });
 
   const [newRow, setNewRow] = React.useState(
       () => Object.fromEntries(cols.map(x => [x, ''])));
 
   const onInputChange = (c, v) => {
-    setNewRow({...newRow, [c]:v});
+    setNewRow({...newRow, [c]: v});
+  };
+
+  const addRow = () => {
+    fetch('http://127.0.0.1:3000/expenses/', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newRow),
+    });
+    setData2([...data2, newRow]);
   };
 
   return <>
@@ -18,9 +36,11 @@ export const Table = (props) => {
       </tr>
       </thead>
       <tbody>
-      {/*<tr>*/}
-      {/*  {cols.map(c => <td key={c}>{4}</td>)}*/}
-      {/*</tr>*/}
+
+      {data2?.length && data2.map((d, i) => <tr key={i}>
+        {cols.map(c => <td key={c}>{d[c]}</td>)}
+      </tr>)}
+
 
       </tbody>
       <tfoot>
@@ -35,7 +55,7 @@ export const Table = (props) => {
 
       </tfoot>
     </table>
-    <button onClick={e=>console.log(newRow)}>Add</button>
+    <button onClick={addRow}>Add</button>
     {/*<ul>*/}
     {/*  {Object.entries(newRow).map(([k, v]) => <li>{k}: {v}</li>)}*/}
     {/*</ul>*/}

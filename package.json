@@ -6,13 +6,14 @@
     "build-prod": "parcel build src/index.html"
   },
   "dependencies": {
+    "json-server": "^0.16.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
-    "@babel/preset-react": "^7.8.3"
+    "@babel/preset-react": "^7.8.3",
+    "parcel-bundler": "^1.12.4"
   }
 }

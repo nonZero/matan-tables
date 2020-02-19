@@ -1,0 +1,52 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "date": "1/1/1",
+      "title": "pizza",
+      "amount": "78",
+      "category": "food"
+    },
+    {
+      "id": 2,
+      "date": "1/3/1",
+      "title": "burger",
+      "amount": "12",
+      "category": "food"
+    },
+    {
+      "id": 3,
+      "date": "1/2/1",
+      "amount": "222",
+      "title": "garage",
+      "category": "car"
+    },
+    {
+      "id": 4
+    },
+    {
+      "date": "asdsa",
+      "title": "sadsa",
+      "amount": "dsadsad",
+      "category": "asdadad",
+      "id": 5
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
